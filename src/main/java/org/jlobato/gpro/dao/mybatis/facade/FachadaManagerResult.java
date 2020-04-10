@@ -13,7 +13,7 @@ import org.springframework.transaction.annotation.Transactional;
 
 @Repository
 @Transactional
-public class FachadaManagerResultService {
+public class FachadaManagerResult {
 	
 	@Autowired
 	protected ManagerResultMapper managerResultDAO;

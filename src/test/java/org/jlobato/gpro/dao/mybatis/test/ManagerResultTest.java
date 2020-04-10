@@ -5,7 +5,7 @@ import static org.junit.Assert.assertNotNull;
 import static org.junit.Assert.assertNull;
 
 import org.jlobato.gpro.dao.mybatis.facade.FachadaManager;
-import org.jlobato.gpro.dao.mybatis.facade.FachadaManagerResultService;
+import org.jlobato.gpro.dao.mybatis.facade.FachadaManagerResult;
 import org.jlobato.gpro.dao.mybatis.model.Manager;
 import org.jlobato.gpro.dao.mybatis.model.ManagerResult;
 import org.jlobato.gpro.dao.mybatis.model.Race;
@@ -26,7 +26,7 @@ public class ManagerResultTest extends MyBatisBaseTest {
 		race.withIdSeason((short)1);
 		assertNotNull(race);
 		//Llamamos al servicio
-		FachadaManagerResultService resultsService = contexto.getBean(FachadaManagerResultService.class);
+		FachadaManagerResult resultsService = contexto.getBean(FachadaManagerResult.class);
 		//Comprobamos que no hay resultado para esa carrera
 		assertNull(resultsService.findManagerResult(manager, race));
 		resultsService.updateManagerResult(manager, race, null, (short)36);

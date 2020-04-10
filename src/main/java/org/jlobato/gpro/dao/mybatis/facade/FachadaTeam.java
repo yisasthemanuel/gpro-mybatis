@@ -24,7 +24,7 @@ public class FachadaTeam {
 	/**
 	 * 
 	 */
-	private static final transient Logger logger = LoggerFactory.getLogger(FachadaTeam.class);
+	private static final Logger logger = LoggerFactory.getLogger(FachadaTeam.class);
 	
     @Autowired
     protected TeamMapper teamDAO;
@@ -44,8 +44,8 @@ public class FachadaTeam {
     	List<Team> teams = teamDAO.selectByExample(example);
     	if (!teams.isEmpty()) {
     		result = teams.get(0);
+        	logger.debug("Equipo por defecto devuelto: {}", result.getTeamName());    	
     	}
-    	logger.debug("Equipo por defecto devuelto: " + result.getTeamName());    	
     	return result;
     }
     
