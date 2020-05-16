@@ -209,7 +209,7 @@ public class FachadaSeason {
     	Race result = null;
     	RaceExample example = new RaceExample();
     	org.jlobato.gpro.dao.mybatis.model.RaceExample.Criteria criteria = example.createCriteria();
-    	criteria.andRaceDateLessThan(rightNow);
+    	criteria.andRaceDateLessThanOrEqualTo(rightNow);
     	criteria.andIdSeasonEqualTo(getCurrentSeason().getIdSeason());
     	example.setOrderByClause("race_date desc");
     
