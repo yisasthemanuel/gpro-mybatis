@@ -9,7 +9,6 @@ import org.jlobato.gpro.dao.mybatis.facade.FachadaCategory;
 import org.jlobato.gpro.dao.mybatis.facade.FachadaManager;
 import org.jlobato.gpro.dao.mybatis.facade.FachadaTyres;
 import org.jlobato.gpro.dao.mybatis.model.Manager;
-import org.jlobato.gpro.dao.mybatis.model.ManagerTeamHistory;
 import org.jlobato.gpro.dao.mybatis.model.Race;
 import org.jlobato.gpro.dao.mybatis.model.Team;
 import org.junit.Test;
@@ -25,7 +24,6 @@ public class ManagerHistoryTest extends MyBatisBaseTest {
 		assertNotNull(managerService);
 		assertNotNull(categoryService);
 		assertNotNull(tyresService);
-		Manager manager = managerService.getManagerByCode("JESUS");
 		managerService.addManagerHistory("JESUS",
 				categoryService.getCategoryByCode("R").getIdCategory(),
 				new Short((short)79),

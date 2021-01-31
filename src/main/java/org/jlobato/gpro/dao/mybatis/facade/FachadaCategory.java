@@ -9,16 +9,22 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
+// TODO: Auto-generated Javadoc
+/**
+ * The Class FachadaCategory.
+ */
 @Service
 @Transactional
 public class FachadaCategory {
 	
+	/** The category DAO. */
 	@Autowired
 	private CategoryMapper categoryDAO;
 	
 	/**
-	 * 
-	 * @return
+	 * Gets the categories.
+	 *
+	 * @return the categories
 	 */
 	public List<Category> getCategories() {
 		CategoryExample example = new CategoryExample();
@@ -27,14 +33,33 @@ public class FachadaCategory {
 	}
 	
 	/**
-	 * 
-	 * @param code
-	 * @return
+	 * Gets the category by code.
+	 *
+	 * @param code the code
+	 * @return the category by code
 	 */
 	public Category getCategoryByCode(String code) {
 		Category result = null;
 		CategoryExample example = new CategoryExample();
 		example.createCriteria().andCodeAltCategoryEqualTo(code);
+		List<Category> category = categoryDAO.selectByExample(example);
+		if (!category.isEmpty()) {
+			result = category.get(0);
+		}
+		
+		return result;
+	}
+	
+	/**
+	 * Gets the category.
+	 *
+	 * @param idCategory the id category
+	 * @return the category
+	 */
+	public Category getCategory(Short idCategory) {
+		Category result = null;
+		CategoryExample example = new CategoryExample();
+		example.createCriteria().andIdCategoryEqualTo(idCategory);
 		List<Category> category = categoryDAO.selectByExample(example);
 		if (!category.isEmpty()) {
 			result = category.get(0);
