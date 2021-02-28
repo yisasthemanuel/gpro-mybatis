@@ -6,14 +6,13 @@ import org.jlobato.gpro.dao.mybatis.mappers.CategoryMapper;
 import org.jlobato.gpro.dao.mybatis.model.Category;
 import org.jlobato.gpro.dao.mybatis.model.CategoryExample;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Service;
+import org.springframework.stereotype.Repository;
 import org.springframework.transaction.annotation.Transactional;
 
-// TODO: Auto-generated Javadoc
 /**
  * The Class FachadaCategory.
  */
-@Service
+@Repository
 @Transactional
 public class FachadaCategory {
 	
@@ -39,6 +38,24 @@ public class FachadaCategory {
 	 * @return the category by code
 	 */
 	public Category getCategoryByCode(String code) {
+		Category result = null;
+		CategoryExample example = new CategoryExample();
+		example.createCriteria().andCodeCategoryEqualTo(code);
+		List<Category> category = categoryDAO.selectByExample(example);
+		if (!category.isEmpty()) {
+			result = category.get(0);
+		}
+		
+		return result;
+	}
+	
+	/**
+	 * Gets the category by code.
+	 *
+	 * @param code the code
+	 * @return the category by code
+	 */
+	public Category getCategoryByAltCode(String code) {
 		Category result = null;
 		CategoryExample example = new CategoryExample();
 		example.createCriteria().andCodeAltCategoryEqualTo(code);
@@ -67,5 +84,40 @@ public class FachadaCategory {
 		
 		return result;
 	}
-
+	
+	/**
+	 * Adds the category.
+	 *
+	 * @param category the category
+	 */
+	public void addCategory(Category category) {
+		categoryDAO.insert(category);
+	}
+	
+	/**
+	 * Update category.
+	 *
+	 * @param category the category
+	 */
+	public void updateCategory(Category category) {
+		categoryDAO.updateByPrimaryKey(category);
+	}
+	
+	/**
+	 * Removes the category.
+	 *
+	 * @param category the category
+	 */
+	public void removeCategory(Category category) {
+		this.removeCategory(category.getIdCategory());
+	}
+	
+	/**
+	 * Removes the category.
+	 *
+	 * @param id the id
+	 */
+	public void removeCategory(short id) {
+		categoryDAO.deleteByPrimaryKey(id);
+	}
 }
