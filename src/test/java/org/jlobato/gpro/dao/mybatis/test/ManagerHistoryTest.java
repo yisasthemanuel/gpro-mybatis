@@ -25,7 +25,7 @@ public class ManagerHistoryTest extends MyBatisBaseTest {
 		assertNotNull(categoryService);
 		assertNotNull(tyresService);
 		managerService.addManagerHistory("JESUS",
-				categoryService.getCategoryByCode("R").getIdCategory(),
+				categoryService.getCategoryByCode("R").getIdCategory().shortValue(),
 				new Short((short)79),
 				new Short((short)16),
 				tyresService.getTyreBrand("PI").getIdTyreBrand());
