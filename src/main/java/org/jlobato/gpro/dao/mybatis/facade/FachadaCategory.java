@@ -76,7 +76,7 @@ public class FachadaCategory {
 	public Category getCategory(Short idCategory) {
 		Category result = null;
 		CategoryExample example = new CategoryExample();
-		example.createCriteria().andIdCategoryEqualTo(idCategory);
+		example.createCriteria().andIdCategoryEqualTo(idCategory.intValue());
 		List<Category> category = categoryDAO.selectByExample(example);
 		if (!category.isEmpty()) {
 			result = category.get(0);
@@ -109,7 +109,7 @@ public class FachadaCategory {
 	 * @param category the category
 	 */
 	public void removeCategory(Category category) {
-		this.removeCategory(category.getIdCategory());
+		this.removeCategory(category.getIdCategory().shortValue());
 	}
 	
 	/**
@@ -118,6 +118,6 @@ public class FachadaCategory {
 	 * @param id the id
 	 */
 	public void removeCategory(short id) {
-		categoryDAO.deleteByPrimaryKey(id);
+		categoryDAO.deleteByPrimaryKey((int)id);
 	}
 }
