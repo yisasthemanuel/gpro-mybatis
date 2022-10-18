@@ -24,11 +24,7 @@ public class ManagerHistoryTest extends MyBatisBaseTest {
 		assertNotNull(managerService);
 		assertNotNull(categoryService);
 		assertNotNull(tyresService);
-		managerService.addManagerHistory("JESUS",
-				categoryService.getCategoryByCode("R").getIdCategory().shortValue(),
-				new Short((short)79),
-				new Short((short)16),
-				tyresService.getTyreBrand("PI").getIdTyreBrand());
+		managerService.updateManagerHistory("JESUS", new Short((short)16), categoryService.getCategoryByAltCode("R").getIdCategory().shortValue(), new Short((short)79), null, null, null, null, null, null, null, null, null, null, null);
 		
 		//TODO - Meter código de borrado
 	}
