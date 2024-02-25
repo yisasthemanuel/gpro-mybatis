@@ -61,7 +61,7 @@
 	<dependency>
 	     <groupId>org.mybatis.caches</groupId>
 	     <artifactId>mybatis-ehcache</artifactId>
-	     <version>1.0.3</version>
+	     <version>1.2.3</version>
 	   </dependency>
 	<!--postgresql 9.4+ jdbc driver -->
 	<dependency>
@@ -159,11 +159,11 @@
   <!-- Propiedades generales del proyecto -->
   <properties>
   	<junit.version>4.13.1</junit.version>
-  	<org.springframework.version>5.3.20</org.springframework.version>
+  	<org.springframework.version>6.0.0</org.springframework.version>
   	<org.jlobato.gpro.version>1.0.0.RELEASE</org.jlobato.gpro.version>
   	<org.jlobato.gpro.gprsheetparser.version>1.0.3.RELEASE</org.jlobato.gpro.gprsheetparser.version>  	  	
   	<org.mybatis.version>3.5.6</org.mybatis.version>
-  	<org.mybatis.spring.version>2.0.6</org.mybatis.spring.version>
+  	<org.mybatis.spring.version>3.0.0</org.mybatis.spring.version>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
     <mybatis.generator.jdbcDriver>org.postgresql.Driver</mybatis.generator.jdbcDriver>
@@ -172,8 +172,8 @@
     <mybatis.generator.password>gprodata</mybatis.generator.password>
 	<java.build.version>1.8</java.build.version>
 	<java.source.version>1.8</java.source.version>
-	<maven.compiler.source>1.8</maven.compiler.source>
-    <maven.compiler.target>1.8</maven.compiler.target>  	
+	<maven.compiler.source>17</maven.compiler.source>
+    <maven.compiler.target>17</maven.compiler.target>  	
   	<org.postgresql.version>42.7.2</org.postgresql.version>
   </properties>
 </project>

@@ -13,58 +13,89 @@ import org.jlobato.gpro.dao.mybatis.facade.FachadaTyres;
 import org.jlobato.gpro.dao.mybatis.model.TyreBrand;
 import org.junit.Test;
 
+/**
+ * The Class TyreBrandTest.
+ */
 public class TyreBrandTest extends MyBatisBaseTest {
 
+	/**
+	 * Test dunnos.
+	 */
 	@Test
 	public void testDunnos() {
 		testTyres("DU", "Dunnolop", "Dunno");
 	}
 
+	/**
+	 * Test pipis.
+	 */
 	@Test
 	public void testPipis() {
 		testTyres("PI", "Pipirelli", "Pipis");
 	}
 
+	/**
+	 * Test yokos.
+	 */
 	@Test
 	public void testYokos() {
 		testTyres("YO", "Yokomama", "Yokos");
 	}
 
+	/**
+	 * Test contis.
+	 */
 	@Test
 	public void testContis() {
 		testTyres("CO", "Contimental", "Contis");
 	}
 
+	/**
+	 * Test avonns.
+	 */
 	@Test
 	public void testAvonns() {
 		testTyres("AV", "Avonn", "Avonns");
 	}
 
+	/**
+	 * Test badyears.
+	 */
 	@Test
 	public void testBadyears() {
 		testTyres("BY", "Badyear", "Badyears");
 	}
 
+	/**
+	 * Test hans.
+	 */
 	@Test
 	public void testHans() {
 		testTyres("HA", "Hancock", "Hans");
 	}
 
+	/**
+	 * Test michis.
+	 */
 	@Test
 	public void testMichis() {
 		testTyres("MI", "Michelini", "Michis");
 	}
 
+	/**
+	 * Test bridges.
+	 */
 	@Test
 	public void testBridges() {
 		testTyres("BR", "Bridgerock", "Bridges");
 	}
 
 	/**
-	 * 
-	 * @param code
-	 * @param longName
-	 * @param shortName
+	 * Test tyres.
+	 *
+	 * @param code the code
+	 * @param longName the long name
+	 * @param shortName the short name
 	 */
 	private void testTyres(String code, String longName, String shortName) {
 		FachadaTyres fachadaRepos = contexto.getBean(FachadaTyres.class);
@@ -86,6 +117,9 @@ public class TyreBrandTest extends MyBatisBaseTest {
 		assertNull(fachadaRepos.getTyreBrandIcon(brand.getIdTyreBrand()));
 	}
 	
+	/**
+	 * Test icons.
+	 */
 	@Test
 	public void testIcons() {
 		testIcon("/org/jlobato/gpro/imgs/tyres/avonn.gif");
@@ -99,6 +133,9 @@ public class TyreBrandTest extends MyBatisBaseTest {
 		testIcon("/org/jlobato/gpro/imgs/tyres/badyear.gif");
 	}
 
+	/**
+	 * Test images.
+	 */
 	@Test
 	public void testImages() {
 		testIcon("/org/jlobato/gpro/imgs/tyres/avonn_img.gif");
@@ -113,8 +150,9 @@ public class TyreBrandTest extends MyBatisBaseTest {
 	}
 
 	/**
-	 * 
-	 * @param path
+	 * Test icon.
+	 *
+	 * @param path the path
 	 */
 	private void testIcon(String path) {
 		try (InputStream is = getClass().getResourceAsStream(path)) {

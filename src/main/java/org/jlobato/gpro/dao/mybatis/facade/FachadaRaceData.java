@@ -189,7 +189,7 @@ public class FachadaRaceData {
 				throw new IllegalArgumentException("Manager con código '" + codManager + "' no encontrado");
 			}
 			
-			Short idseason = new Short((short)model.getSeasonNumber().intValue()); 
+			Short idseason = Short.valueOf((short)model.getSeasonNumber().intValue()); 
 			
 			//Encontramos el circuto al que corresponde la carrera
 			Track track = trackFacade.getTrackByName(model.getTrackName());
@@ -212,66 +212,66 @@ public class FachadaRaceData {
 			logger.info("Importando raceanalysis de " + raceDetailedDescription);
 			
 			//setup utilizado
-			raceData.withSetupEn(new Short((short)model.getEngineSetup())).
-				withSetupFw(new Short((short)model.getFrontWingSetup())).
-				withSetupRw(new Short((short)model.getRearWingSetup())).
-				withSetupBr(new Short((short)model.getBrakesSetup())).
-				withSetupSu(new Short((short)model.getSuspensionSetup())).
-				withSetupGe(new Short((short)model.getGearboxSetup()));
+			raceData.withSetupEn(Short.valueOf((short)model.getEngineSetup())).
+				withSetupFw(Short.valueOf((short)model.getFrontWingSetup())).
+				withSetupRw(Short.valueOf((short)model.getRearWingSetup())).
+				withSetupBr(Short.valueOf((short)model.getBrakesSetup())).
+				withSetupSu(Short.valueOf((short)model.getSuspensionSetup())).
+				withSetupGe(Short.valueOf((short)model.getGearboxSetup()));
 			
 			//riesgos utilizados
-			raceData.withOvertakeRisks(new Short((short)model.getOvertakeRisks())).
-				withDefendRisks(new Short((short)model.getDefendRisks())).
-				withDryRisks(new Short((short)model.getClearDryRisks())).
-				withWetRisks(new Short((short)model.getClearWetRisks())).
-				withMalfunctionRisks(new Short((short)model.getMalfunctRisks()));
+			raceData.withOvertakeRisks(Short.valueOf((short)model.getOvertakeRisks())).
+				withDefendRisks(Short.valueOf((short)model.getDefendRisks())).
+				withDryRisks(Short.valueOf((short)model.getClearDryRisks())).
+				withWetRisks(Short.valueOf((short)model.getClearWetRisks())).
+				withMalfunctionRisks(Short.valueOf((short)model.getMalfunctRisks()));
 			
 			//wears iniciales
-			raceData.withWeastaCh(new Short((short)model.getChassisStartWear())).
-				withWeastaEn(new Short((short)model.getEngineStartWear())).
-				withWeastaFw(new Short((short)model.getFrontWingStartWear())).
-				withWeastaRw(new Short((short)model.getRearWingStartWear())).
-				withWeastaUn(new Short((short)model.getUnderbodyStartWear())).
-				withWeastaSi(new Short((short)model.getSidepodsStartWear())).
-				withWeastaCo(new Short((short)model.getCoolingStartWear())).
-				withWeastaGe(new Short((short)model.getGearboxStartWear())).
-				withWeastaBr(new Short((short)model.getBrakesStartWear())).
-				withWeastaSu(new Short((short)model.getSuspensionStartWear())).
-				withWeastaEl(new Short((short)model.getElectronicsStartWear()));
+			raceData.withWeastaCh(Short.valueOf((short)model.getChassisStartWear())).
+				withWeastaEn(Short.valueOf((short)model.getEngineStartWear())).
+				withWeastaFw(Short.valueOf((short)model.getFrontWingStartWear())).
+				withWeastaRw(Short.valueOf((short)model.getRearWingStartWear())).
+				withWeastaUn(Short.valueOf((short)model.getUnderbodyStartWear())).
+				withWeastaSi(Short.valueOf((short)model.getSidepodsStartWear())).
+				withWeastaCo(Short.valueOf((short)model.getCoolingStartWear())).
+				withWeastaGe(Short.valueOf((short)model.getGearboxStartWear())).
+				withWeastaBr(Short.valueOf((short)model.getBrakesStartWear())).
+				withWeastaSu(Short.valueOf((short)model.getSuspensionStartWear())).
+				withWeastaEl(Short.valueOf((short)model.getElectronicsStartWear()));
 			
 			//wears finales
-			raceData.withWeaendCh(new Short((short)model.getChassisEndWear())).
-				withWeaendEn(new Short((short)model.getEngineEndWear())).
-				withWeaendFw(new Short((short)model.getFrontWingEndWear())).
-				withWeaendRw(new Short((short)model.getRearWingEndWear())).
-				withWeaendUn(new Short((short)model.getUnderbodyEndWear())).
-				withWeaendSi(new Short((short)model.getSidepodsEndWear())).
-				withWeaendCo(new Short((short)model.getCoolingEndWear())).
-				withWeaendGe(new Short((short)model.getGearboxEndWear())).
-				withWeaendBr(new Short((short)model.getBrakesEndWear())).
-				withWeaendSu(new Short((short)model.getSuspensionEndWear())).
-				withWeaendEl(new Short((short)model.getElectronicsEndWear()));
+			raceData.withWeaendCh(Short.valueOf((short)model.getChassisEndWear())).
+				withWeaendEn(Short.valueOf((short)model.getEngineEndWear())).
+				withWeaendFw(Short.valueOf((short)model.getFrontWingEndWear())).
+				withWeaendRw(Short.valueOf((short)model.getRearWingEndWear())).
+				withWeaendUn(Short.valueOf((short)model.getUnderbodyEndWear())).
+				withWeaendSi(Short.valueOf((short)model.getSidepodsEndWear())).
+				withWeaendCo(Short.valueOf((short)model.getCoolingEndWear())).
+				withWeaendGe(Short.valueOf((short)model.getGearboxEndWear())).
+				withWeaendBr(Short.valueOf((short)model.getBrakesEndWear())).
+				withWeaendSu(Short.valueOf((short)model.getSuspensionEndWear())).
+				withWeaendEl(Short.valueOf((short)model.getElectronicsEndWear()));
 			
 			//car levels
-			raceData.withCarlvlCh(new Short((short)model.getChassisLevel())).
-				withCarlvlEn(new Short((short)model.getEngineLevel())).
-				withCarlvlFw(new Short((short)model.getFrontWingLevel())).
-				withCarlvlRw(new Short((short)model.getRearWingLevel())).
-				withCarlvlUn(new Short((short)model.getUnderbodyLevel())).
-				withCarlvlSi(new Short((short)model.getSidepodsLevel())).
-				withCarlvlCo(new Short((short)model.getCoolingLevel())).
-				withCarlvlGe(new Short((short)model.getGearboxLevel())).
-				withCarlvlBr(new Short((short)model.getBrakesLevel())).
-				withCarlvlSu(new Short((short)model.getSuspensionLevel())).
-				withCarlvlEl(new Short((short)model.getElectronicsLevel()));
+			raceData.withCarlvlCh(Short.valueOf((short)model.getChassisLevel())).
+				withCarlvlEn(Short.valueOf((short)model.getEngineLevel())).
+				withCarlvlFw(Short.valueOf((short)model.getFrontWingLevel())).
+				withCarlvlRw(Short.valueOf((short)model.getRearWingLevel())).
+				withCarlvlUn(Short.valueOf((short)model.getUnderbodyLevel())).
+				withCarlvlSi(Short.valueOf((short)model.getSidepodsLevel())).
+				withCarlvlCo(Short.valueOf((short)model.getCoolingLevel())).
+				withCarlvlGe(Short.valueOf((short)model.getGearboxLevel())).
+				withCarlvlBr(Short.valueOf((short)model.getBrakesLevel())).
+				withCarlvlSu(Short.valueOf((short)model.getSuspensionLevel())).
+				withCarlvlEl(Short.valueOf((short)model.getElectronicsLevel()));
 			
 			//Fuel and tyres data
-			raceData.withFuelSta(new Short((short)model.getStartFuel()));
+			raceData.withFuelSta(Short.valueOf((short)model.getStartFuel()));
 			if (model.getEndFuel() != null) {
-				raceData.withFuelEnd(new Short((short)model.getEndFuel().intValue()));
+				raceData.withFuelEnd(Short.valueOf((short)model.getEndFuel().intValue()));
 			}
 			if (model.getEndTyres() != null) {
-				raceData.withTyrEnd(new Short((short)model.getEndTyres().intValue()));
+				raceData.withTyrEnd(Short.valueOf((short)model.getEndTyres().intValue()));
 				
 			}
 				

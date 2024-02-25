@@ -13,8 +13,14 @@ import org.jlobato.gpro.dao.mybatis.model.Race;
 import org.jlobato.gpro.dao.mybatis.model.Team;
 import org.junit.Test;
 
+/**
+ * The Class ManagerHistoryTest.
+ */
 public class ManagerHistoryTest extends MyBatisBaseTest {
 
+	/**
+	 * Test.
+	 */
 	@Test
 	public void test() {
 		//Obtenemos el manager de test
@@ -24,11 +30,14 @@ public class ManagerHistoryTest extends MyBatisBaseTest {
 		assertNotNull(managerService);
 		assertNotNull(categoryService);
 		assertNotNull(tyresService);
-		managerService.updateManagerHistory("JESUS", new Short((short)16), categoryService.getCategoryByAltCode("R").getIdCategory().shortValue(), new Short((short)79), null, null, null, null, null, null, null, null, null, null, null);
+		managerService.updateManagerHistory("JESUS", Short.valueOf((short)16), categoryService.getCategoryByAltCode("R").getIdCategory().shortValue(), Short.valueOf((short)79), null, null, null, null, null, null, null, null, null, null, null);
 		
 		//TODO - Meter código de borrado
 	}
 	
+	/**
+	 * Test history.
+	 */
 	@Test
 	public void testHistory() {
 		FachadaManager managerServices = contexto.getBean(FachadaManager.class);
@@ -49,6 +58,15 @@ public class ManagerHistoryTest extends MyBatisBaseTest {
 	}
 	
 	
+	/**
+	 * Gets the managers.
+	 *
+	 * @param fManager the f manager
+	 * @param idTeam the id team
+	 * @param idSeason the id season
+	 * @param idRace the id race
+	 * @return the managers
+	 */
 	private List<Manager> getManagers(FachadaManager fManager, int idTeam, int idSeason, int idRace) {
 		Team team = new Team().withIdTeam((short)idTeam);
 		Race race = new Race();

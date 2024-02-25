@@ -11,9 +11,15 @@ import org.jlobato.gpro.dao.mybatis.model.ManagerResult;
 import org.jlobato.gpro.dao.mybatis.model.Race;
 import org.junit.Test;
 
+/**
+ * The Class ManagerResultTest.
+ */
 public class ManagerResultTest extends MyBatisBaseTest {
 	
 
+	/**
+	 * Test one.
+	 */
 	@Test
 	public void testOne() {
 		//Obtenemos el manager de test
@@ -36,17 +42,20 @@ public class ManagerResultTest extends MyBatisBaseTest {
 		//Comprobamos que no hay posición de parrilla de salida
 		assertNull(result.getGridPosition());
 		//Comprobamos que la posición de carrera es la correcta
-		assertEquals(result.getRacePosition(), new Short((short)36));
+		assertEquals(result.getRacePosition(), Short.valueOf((short)36));
 		//Ahora cambiamos la posición y ponemos posición de parrilla de salida
 		resultsService.updateManagerResult(manager, race, (short)33, (short)39);
-		assertEquals(result.getRacePosition(), new Short((short)39));
-		assertEquals(result.getGridPosition(), new Short((short)33));
+		assertEquals(result.getRacePosition(), Short.valueOf((short)39));
+		assertEquals(result.getGridPosition(), Short.valueOf((short)33));
 		//Borramos
 		resultsService.deleteManagerResult(manager, race);
 		//Comprobamos que es nulo
 		assertNull(resultsService.findManagerResult(manager, race));
 	}
 	
+	/**
+	 * Test multiple.
+	 */
 	@Test
 	public void testMultiple() {
 		assertNotNull(contexto);
