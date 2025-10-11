@@ -2,7 +2,7 @@
 <modelVersion>4.0.0</modelVersion>
 <groupId>org.jlobato.gpro</groupId>
 <artifactId>gpro-mybatis</artifactId>
-<version>1.2.0.2.RELEASE</version>
+<version>1.2.0.3.RELEASE</version>
 <name>GPRO MyBatis Persistence</name>
 <description>GPRO Database Persistence using MyBatis</description>
   <dependencies>
@@ -173,7 +173,7 @@
 	<java.build.version>1.8</java.build.version>
 	<java.source.version>1.8</java.source.version>
 	<maven.compiler.source>17</maven.compiler.source>
-    <maven.compiler.target>17</maven.compiler.target>  	
+    <maven.compiler.target>17</maven.compiler.target>
   	<org.postgresql.version>42.7.2</org.postgresql.version>
   </properties>
 </project>
